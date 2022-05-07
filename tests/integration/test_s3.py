@@ -1937,7 +1937,7 @@ class TestS3(unittest.TestCase):
         object_key = "key-%s" % short_uid()
         body = "body data"
 
-        self.s3_client.create_bucket(Bucket=bucket_name)
+        self.s3_client.create_bucket(Bucket=bucket_name, ACL="public-read")
 
         self.s3_client.put_object(
             Bucket=bucket_name,
